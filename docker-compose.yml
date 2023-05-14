@@ -1,0 +1,24 @@
+services:
+  redis:
+    image: redis
+  web:
+    build:
+      context: ../../../Downloads/demo/web-crawler-service
+    environment:
+      FLASK_APP: run
+      FLASK_DEBUG: 1
+    volumes:
+      - .:/web-crawler-service
+    command: sh -c "export FLASK_APP=run.py && flask db upgrade && flask run -h 0.0.0.0 -p 5001"
+    ports:
+      - 5001:5001
+  celery:
+    build:
+        context: ../../../Downloads/demo/web-crawler-service
+    environment:
+      FLASK_APP: run
+    volumes:
+      - .:/web-crawler-service
+    command: celery -A run.celery worker --loglevel=info
+    depends_on:
+      - redis

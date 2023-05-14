@@ -1,0 +1,7 @@
+flask~=2.3.2
+celery~=5.2.7
+redis~=4.5.5
+flask-sqlalchemy~=3.0.3
+Flask-Migrate~=4.0.4
+requests~=2.30.0
+python-dotenv~=1.0.0

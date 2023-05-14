@@ -20,7 +20,6 @@ def crawl() -> jsonify:
     crawl_ids = []
     for url in json['urls']:
         crawl_id = create_crawl(url)
-        process_crawl.delay(crawl_id)
         crawl_ids.append(str(crawl_id))
 
     return jsonify({'crawl_ids': ','.join(crawl_ids)}), 200

@@ -3,7 +3,7 @@ services:
     image: redis
   web:
     build:
-      context: ../../../Downloads/demo/web-crawler-service
+      context: .
     environment:
       FLASK_APP: run
       FLASK_DEBUG: 1
@@ -14,7 +14,7 @@ services:
       - 5001:5001
   celery:
     build:
-        context: ../../../Downloads/demo/web-crawler-service
+        context: .
     environment:
       FLASK_APP: run
     volumes:

@@ -38,4 +38,12 @@ curl http://localhost:5001/status/7
 
 The `status/<int>` parameter should be a crawl id
 ****
+In case you have an error / bad result, you can always re-crawl:
+
+```
+curl http://localhost:5001/recrawl/7
+```
+****
+
+
 ![Alt Text](diagram.svg)

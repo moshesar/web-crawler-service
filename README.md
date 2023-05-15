@@ -19,7 +19,6 @@ Start the Docker containers:
 docker-compose up --build
 ```
 
-
 This command will start the Flask application, Celery worker, and Redis service.
 ****
 Make a POST request to initiate crawling:
